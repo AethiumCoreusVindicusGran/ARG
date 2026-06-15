@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistema Interno - ÊXODO</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html, body{
+  width:100%;
+  height:100%;
+  background:#000;
+  overflow:hidden;
+  font-family:Consolas, monospace;
+}
+
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.background{
+  position:fixed;
+  inset:0;
+  background-image:url("exodo.jpg");
+  background-size:cover;
+  background-position:center;
+  opacity:0.15;
+  z-index:-1;
+}
+
+/* CONTAINER */
+.container{
+  width:420px;
+  padding:30px;
+  border:1px solid #00ff88;
+  background:#050505;
+  box-shadow:0 0 20px rgba(0,255,136,0.25);
+}
+
+h1{
+  color:#00ff88;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:24px;
+}
+
+.subtitulo{
+  color:#888;
+  text-align:center;
+  margin-bottom:25px;
+  font-size:12px;
+}
+
+label{
+  display:block;
+  color:#00ff88;
+  margin-bottom:5px;
+}
+
+input{
+  width:100%;
+  padding:12px;
+  margin-bottom:15px;
+  background:#000;
+  color:#00ff88;
+  border:1px solid #00ff88;
+  outline:none;
+}
+
+input:focus{
+  box-shadow:0 0 10px rgba(0,255,136,0.4);
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#00ff88;
+  color:#000;
+  border:none;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+button:hover{
+  background:#33ffaa;
+}
+
+#mensagem{
+  margin-top:20px;
+  color:#00ff88;
+  min-height:50px;
+  line-height:1.5;
+}
+</style>
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+  <h1>ÊXODO</h1>
+  <div class="subtitulo">SISTEMA INTERNO</div>
+
+  <label>USUÁRIO</label>
+  <input type="text" id="usuario">
+
+  <label>SENHA</label>
+  <input type="password" id="senha">
+
+  <button onclick="login()">ACESSAR</button>
+
+  <div id="mensagem"></div>
+</div>
+
+<script>
+function login() {
+  const usuario = document.getElementById("usuario").value;
+  const senha = document.getElementById("senha").value;
+  const msg = document.getElementById("mensagem");
+
+  const usuariosValidos = {
+    "????": "????"
+  };
+
+  if (!usuario || !senha) {
+    msg.style.color = "#00ff88";
+    msg.textContent = "Preencha todos os campos.";
+    return;
+  }
+
+  const senhaCorreta = usuariosValidos[usuario];
+
+  if (senhaCorreta && senha === senhaCorreta) {
+    msg.style.color = "#00ff88";
+    msg.textContent = "Você acha que vai ser fácil assim?";
+    
+  } else {
+    msg.style.color = "red";
+    msg.textContent = "Acesso negado. Credenciais inválidas.";
+  }
+}
+</script>
+
+</body>
+</html>
