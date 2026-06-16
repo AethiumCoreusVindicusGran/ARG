@@ -135,6 +135,12 @@ function login() {
     msg.style.color = "#00ff88";
     msg.textContent = "Preencha todos os campos.";
     return;
+    }
+
+  if (senha === "RedHotHouse") {
+    msg.style.color = "red";
+    msg.textContent = "Caminho errado, safadinhe.";
+    return;
   }
 
   const senhaCorreta = usuariosValidos[usuario];
