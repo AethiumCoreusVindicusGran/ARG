@@ -131,17 +131,18 @@ function login() {
     "????": "????"
   };
 
-  if (!usuario || !senha) {
-    msg.style.color = "#00ff88";
-    msg.textContent = "Preencha todos os campos.";
-    return;
-    }
-
+  
   if (senha === "RedHotHouse") {
     msg.style.color = "red";
     msg.textContent = "Caminho errado, safadinhe.";
     return;
   }
+  
+  if (!usuario || !senha) {
+    msg.style.color = "#00ff88";
+    msg.textContent = "Preencha todos os campos.";
+    return;
+    }
 
   const senhaCorreta = usuariosValidos[usuario];
 
