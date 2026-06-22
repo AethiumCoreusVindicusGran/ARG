@@ -152,7 +152,6 @@ function login() {
     return;
   }
 
-  
   if (usuario === "Odisseu" && senha === "Divindade") {
     msg.style.color = "#00ff88";
     msg.innerHTML =
@@ -163,6 +162,14 @@ function login() {
     return;
   }
   
+  if (usuario === "sombrasinternas" && senha === "ferirsaberqueimarmorrer") {
+    msg.style.color = "#00ff88";
+    msg.innerHTML =
+      "Acesso concedido.<br>" +
+      "Bem-vinda, Phanora.<br>" +
+      "Seu código é: <b>79 63</b>.";
+    return;
+  }
   const senhaCorreta = usuariosValidos[usuario];
 
   if (senhaCorreta && senha === senhaCorreta) {
