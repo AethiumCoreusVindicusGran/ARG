@@ -170,6 +170,15 @@ function login() {
       "Seu código é: <b>79 63</b>.";
     return;
   }
+   
+  if (usuario === "aetos" && senha === "ocaduceu") {
+    msg.style.color = "#00ff88";
+    msg.innerHTML =
+      "Acesso concedido.<br>" +
+      "Bem-vinda, Aikatheríne.<br>" +
+      "Seu código é: <b>79</b>.";
+    return;
+  }
   const senhaCorreta = usuariosValidos[usuario];
 
   if (senhaCorreta && senha === senhaCorreta) {
