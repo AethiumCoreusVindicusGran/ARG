@@ -179,6 +179,15 @@ function login() {
       "Seu código é: <b>79</b>.";
     return;
   }
+
+   if (usuario === "lamascara" && senha === "recuerdos") {
+    msg.style.color = "#00ff88";
+    msg.innerHTML =
+      "Acesso concedido.<br>" +
+      "Bem-vindo, Anthony.<br>" +
+      "Seu código é: <b>69</b>.";
+    return;
+  }
   const senhaCorreta = usuariosValidos[usuario];
 
   if (senhaCorreta && senha === senhaCorreta) {
